@@ -2,4 +2,5 @@ exclude_patterns:
 - "app/"
 - "public/"
 - "system/"
+- "tests"
 - "writable/"
