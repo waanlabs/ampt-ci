@@ -1,3 +1,27 @@
+#--------------------------------------------------------------------
+# Git Ignore file
+#--------------------------------------------------------------------
+
+# Logs
+logs/*
+*.log
+
+#OS files & folders
+.DS_Store
+
+#IDE files & folders
+.idea/
+.vscode/
+.run
+
+#Vendor files & folders
+vendor/
+bower_components/
+node_modules/
+composer.lock
+package-lock.json
+
+#Codeigniter files & folders
 */config/development
 */logs/log-*.php
 !*/logs/index.html
@@ -15,3 +39,6 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+#User files & folders
+AMPT-CI_bak/
