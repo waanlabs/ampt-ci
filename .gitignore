@@ -6,22 +6,22 @@
 logs/*
 *.log
 
-#OS files & folders
+# OS files & folders
 .DS_Store
 
-#IDE files & folders
+# IDE files & folders
 .idea/
 .vscode/
 .run
 
-#Vendor files & folders
+# Vendor files & folders
 vendor/
 bower_components/
 node_modules/
 composer.lock
 package-lock.json
 
-#Codeigniter files & folders
+# Codeigniter files & folders
 */config/development
 */logs/log-*.php
 !*/logs/index.html
@@ -34,11 +34,11 @@ user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
-#codeigniter 3
+# Codeigniter 3
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
 
-#User files & folders
+# User files & folders
 AMPT-CI_bak/
