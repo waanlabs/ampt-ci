@@ -12,7 +12,8 @@
         "ext-mbstring": "*",
         "kint-php/kint": "^4.1.1",
         "laminas/laminas-escaper": "^2.9",
-        "psr/log": "^1.1"
+        "psr/log": "^1.1",
+        "smarty/smarty": "^4.1"
     },
     "require-dev": {
         "codeigniter/coding-standard": "^1.1",
@@ -41,7 +42,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CodeIgniter\\": "service/system/"
+            "CodeIgniter\\": "system/"
         },
         "exclude-from-classmap": [
             "**/Database/Migrations/**"

@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/sh
 
 /usr/sbin/apachectl -D FOREGROUND

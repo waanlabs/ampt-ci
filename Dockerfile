@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-LABEL maintainer=Wired<anupa@wiredintelligence.com>
+LABEL maintainer=Waan<admin@waan.email>
 
 RUN apt-get update && \
     apt-get install -y tzdata && \
@@ -34,7 +34,7 @@ WORKDIR /var/www
 RUN rm -rf html/
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-        composer install
+    composer install
 
 ADD runtime/start.sh /
 RUN chmod +x /start.sh
