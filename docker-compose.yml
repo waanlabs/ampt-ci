@@ -1,0 +1,12 @@
+services:
+    webapp:
+      container_name:  "ampt-ci"
+
+      build:
+        context: AMPT-CI_bak
+        dockerfile: Dockerfile
+
+      ports:
+      - 80:80
+
+      restart: always
