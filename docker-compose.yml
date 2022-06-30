@@ -1,6 +1,6 @@
 services:
     webapp:
-        container_name:  "ampt-ci"
+        container_name: "ampt-ci"
 
         build:
             context: .
@@ -8,5 +8,8 @@ services:
 
         ports:
             - 80:80
+
+        volumes:
+            - ./service:/var/www:rw
 
         restart: always

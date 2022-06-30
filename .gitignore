@@ -28,6 +28,12 @@ package-lock.json
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
+*/writable/debugbar/*
+*/writable/session/*
+*/writable/smarty/cache/*
+*/writable/smarty/configs/*
+*/writable/smarty/template_c/*
+*/writable/uploads/*
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*

@@ -15,25 +15,18 @@
 
 namespace App\Core;
 
+use App\Controllers\BaseController;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use App\Controllers\BaseController;
 use Psr\Log\LoggerInterface;
 use Smarty;
 
 class MyController extends BaseController
 {
+    /**
+     * @var $instance
+     */
     private static $instance;
-
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-    {
-        // Do Not Edit This Line
-        parent::initController($request, $response, $logger);
-
-        // Preload any models, libraries, etc, here.
-
-        // E.g.: $this->session = \Config\Services::session();
-    }
 
     public static function instance(): Smarty
     {
@@ -46,17 +39,28 @@ class MyController extends BaseController
             $smarty->setCacheDir(WRITEPATH . 'smarty/cache/');
 
             $smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+            $smarty->cache_lifetime = 60 * 60 * 24;
             /* ---------------------------------------------------
              * $smarty->setCompileCheck(true);
              * Check for file changes and recompile cache.
              * Set false for production to reduce overhead.
              * --------------------------------------------------- */
-            $smarty->setCompileCheck(true);
+            $smarty->setCompileCheck(false);
             $smarty->setDebugging(false);
 
             self::$instance = $smarty;
-        };
+        }
         return self::$instance;
+    }
+
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+    {
+        // Do Not Edit This Line
+        parent::initController($request, $response, $logger);
+
+        // Preload any models, libraries, etc, here.
+
+        // E.g.: $this->session = \Config\Services::session();
     }
 }
 /*  End of the file MyController.php  */
