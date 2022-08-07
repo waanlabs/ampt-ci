@@ -27,9 +27,6 @@ composer.lock
 !*/cache/.htaccess
 */writable/debugbar/*
 */writable/session/*
-*/writable/smarty/cache/*
-*/writable/smarty/configs/*
-*/writable/smarty/template_c/*
 */writable/uploads/*
 
 user_guide_src/build/*
@@ -44,3 +41,6 @@ application/logs/*
 /vendor/
 
 # User files & folders
+writable/smarty/cache/*
+writable/smarty/configs/*
+writable/smarty/template_c/*
