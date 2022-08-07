@@ -35,7 +35,7 @@ ADD runtime/apache-config.conf /etc/apache2/sites-available/000-default.conf
 
 RUN sudo sh -c "echo 'ServerName localhost' >> /etc/apache2/apache2.conf"
 
-ADD service /var/www
+ADD services/webapp /var/www
 RUN sudo chown www-data:www-data -R /var/www/
 
 WORKDIR /var/www
