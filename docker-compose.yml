@@ -9,7 +9,4 @@ services:
         ports:
             - 80:80
 
-        #volumes:
-        #    - ./service:/var/www:rw
-
         restart: always
