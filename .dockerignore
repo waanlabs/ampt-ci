@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------
 # Docker Ignore file
 #--------------------------------------------------------------------
-service/vendor/
-service/composer.lock
+services/vendor/
+services/composer.lock
