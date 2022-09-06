@@ -6,7 +6,7 @@
  * @package    ampt-ci.service.app
  * @subpackage Controllers
  * @author     Waan <admin@waan.email>
- * @copyright  Copyright (c) 2021, www.waan.io
+ * @copyright  Copyright (c) 2022, www.waan.io
  * @license    MIT License
  * @link       https://www.waan.io
  * @version    Version 1.0.0
@@ -24,7 +24,7 @@ class Home extends MyController {
 
         $content = array(
             "page_title" => "Welcome to AMPT-CI",
-            "data"                        => "Welcome to AMPT-CI."
+            "data" => "Welcome to AMPT-CI."
         );
 
         $smarty = MyController::instance();
