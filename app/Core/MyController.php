@@ -21,16 +21,14 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Smarty;
 
-class MyController extends BaseController
-{
-    /**
-     * @var $instance
-     */
+class MyController extends BaseController {
+    
     private static $instance;
 
-    public static function instance(): Smarty
-    {
+    public static function instance(): Smarty {
+
         if (!isset(self::$instance)) {
+
             $smarty = new Smarty;
 
             $smarty->setTemplateDir(APPPATH . 'Views/');
@@ -53,8 +51,7 @@ class MyController extends BaseController
         return self::$instance;
     }
 
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-    {
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger) {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Home controller
  * -------------------------------------------------------
@@ -17,12 +18,14 @@ namespace App\Controllers;
 
 use App\Core\MyController;
 
-class Home extends MyController
-{
-    public function index()
-    {
-        $content = array("page_title" => "Welcome to AMPT-CI",
-            "data" => "Welcome to AMPT-CI.");
+class Home extends MyController {
+
+    public function index() {
+
+        $content = array(
+            "page_title" => "Welcome to AMPT-CI",
+            "data"                        => "Welcome to AMPT-CI."
+        );
 
         $smarty = MyController::instance();
         $smarty->assign("c", $content);
