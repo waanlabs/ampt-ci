@@ -1,8 +1,18 @@
 {
-  "name": "codeigniter4/codeigniter4",
-  "type": "project",
+  "name": "waansolutions/AMPT-CI",
   "description": "The CodeIgniter framework v4",
-  "homepage": "https://codeigniter.com",
+  "version": "1.0.0",
+  "type": "project",
+  "keywords": [
+    "Alpine",
+    "CodeIgniter",
+    "MySql",
+    "PHP",
+    "Smarty",
+    "Tailwind"
+  ],
+  "homepage": "",
+  //TODO: setup and add a Github page.
   "license": "MIT",
   "require": {
     "php": "^8.1",
