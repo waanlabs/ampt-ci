@@ -1,6 +1,6 @@
 {
   "name": "waansolutions/AMPT-CI",
-  "description": "The CodeIgniter framework v4",
+  "description": "Alapine, Tailwind and Smarty base CodeIgniter4 template.",
   "version": "1.0.0",
   "type": "project",
   "keywords": [
@@ -12,15 +12,39 @@
     "Tailwind"
   ],
   "homepage": "",
-  //TODO: setup and add a Github page.
-  "license": "MIT",
+  //Add github project url here.
+  "readme": "",
+  //Add relative path of the readme file.
+  "time": "",
+  //Add the date [YYYY-MM-DD] of the last version update.
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Anupa P.",
+      "email": "anupa@waan.email"
+    },
+    {
+      "name": "Deg P.",
+      "email": "deg@waan.email"
+    },
+    {
+      "name": "Wathsala T.",
+      "email": "wathsala@waan.email"
+    }
+  ],
+  "support": {
+    "email": "http://forum.codeigniter.com/",
+    "source": "https://github.com/waansolutions/AMPT-CI"
+  },
+  "funding": [],
   "require": {
     "php": "^8.1",
     "ext-curl": "*",
     "ext-intl": "*",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "kint-php/kint": "^4.1.1",
     "laminas/laminas-escaper": "^2.9",
     "psr/log": "^1.1",
     "smarty/smarty": "^4.1"
@@ -29,6 +53,7 @@
     "codeigniter/coding-standard": "^1.1",
     "fakerphp/faker": "^1.9",
     "friendsofphp/php-cs-fixer": "3.6.*",
+    "kint-php/kint": "^4.1.1",
     "mikey179/vfsstream": "^1.6",
     "nexusphp/cs-config": "^3.3",
     "nexusphp/tachycardia": "^1.0",
@@ -39,16 +64,6 @@
   },
   "suggest": {
     "ext-fileinfo": "Improves mime type detection for files"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-develop": "4.x-dev"
-    }
   },
   "autoload": {
     "psr-4": {
@@ -63,6 +78,16 @@
       "CodeIgniter\\": "tests/system/",
       "CodeIgniter\\AutoReview\\": "tests/AutoReview/",
       "Utils\\": "utils/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-develop": "4.x-dev"
     }
   },
   "scripts": {
@@ -88,10 +113,5 @@
     "test": "Run unit tests",
     "cs": "Check the coding style",
     "cs-fix": "Fix the coding style"
-  },
-  "support": {
-    "forum": "http://forum.codeigniter.com/",
-    "source": "https://github.com/codeigniter4/CodeIgniter4",
-    "slack": "https://codeigniterchat.slack.com"
   }
 }
