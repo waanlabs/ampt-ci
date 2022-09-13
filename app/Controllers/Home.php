@@ -36,7 +36,7 @@ use App\Core\MyController;
  */
 class Home extends MyController
 {
-    public function index()
+    public function index(): void
     {
         $content = array(
             "page_title" => "Welcome to AMPT-CI",
@@ -44,7 +44,7 @@ class Home extends MyController
         );
 
         $smarty = MyController::SmartyInstance();
-        $smarty->assign("content", $content);
+        $smarty->assign("c", $content);
         $smarty->display("home.tpl");
     }
 }

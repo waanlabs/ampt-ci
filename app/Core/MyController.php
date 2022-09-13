@@ -1,7 +1,7 @@
 <?php
 /**
  * MyController
- * -------------------------------------------------------
+ * ------------------------------------------------------------
  * @package    ampt-ci.service.app
  * @subpackage Core
  * @author     Waan <admin@waan.email>
@@ -10,19 +10,19 @@
  * @link       https://www.waan.io
  * @version    Version 1.0.0
  * @source     MyController.php
- * -------------------------------------------------------
+ * ------------------------------------------------------------
  */
 
 /**
  * Namespace (Package) Definition
- * ----------------------------------------------------------------
+ * ------------------------------------------------------------
  */
 
 namespace App\Core;
 
 /**
  * Use (Import) Statement(s) Definition
- * ----------------------------------------------------------------
+ * ------------------------------------------------------------
  */
 
 use App\Controllers\BaseController as BaseController;
@@ -33,20 +33,19 @@ use Smarty as Smarty;
 
 class MyController extends BaseController implements MyInterface
 {
-    private static $smartyInstance = null;
+    private static Smarty|null $smartyInstance = null;
 
     /**
      * Constructor
-     * -------------------------------------------------------
-     * Constructor for MyController; __get() and __set()
-     * methods  for the read-only properties are automatically
-     * defined at the runtime.
+     * ------------------------------------------------------------
+     * Constructor for MyController; __get() and __set() methods
+     * are defined at runtime using read-only properties.
      *
      * @param string $smartyTemplateDir
      * @param string $smartyCompileDir
      * @param string $smartyConfigDir
      * @param string $smartyCacheDir
-     * @param object $smartySetCache
+     * @param int $smartySetCache
      * @param int $smartyCacheLifetime
      * @param bool $smartyCompileCheck
      * @param bool $smartyDebugging
@@ -57,41 +56,41 @@ class MyController extends BaseController implements MyInterface
         public readonly string $smartyCompileDir = WRITEPATH . 'smarty/template_c/',
         public readonly string $smartyConfigDir = WRITEPATH . 'smarty/config',
         public readonly string $smartyCacheDir = WRITEPATH . 'Smarty/Cache',
-        public readonly object $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
+        public readonly int $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
         public readonly int $smartyCacheLifetime = 60 * 60 * 24,
-        /* ---------------------------------------------------
+        /* ------------------------------------------------------------
          * $smarty->setCompileCheck(true);
          * Check for file changes and recompile cache.
          * Set false for production to reduce overhead.
-         * --------------------------------------------------- */
+         * ------------------------------------------------------------ */
         public readonly bool $smartyCompileCheck = false,
         public readonly bool $smartyDebugging = false,
     ) {}
 
     /**
-     * SmartyInstance
-     * -------------------------------------------------------
-     * SmartyInstance is a static class to implement Smarty
-     * templat engine via MyInterface.
+     * SmartyInstance function
+     * ------------------------------------------------------------
+     * SmartyInstance is a class to implement Smarty
+     * template engine via MyInterface.
      *
-     * @return mixed SmartyInstance
+     * @return Smarty Smarty
      */
-    public static function SmartyInstance(): SmartyInstance
+    public function SmartyInstance(): Smarty
     {
         //Check if the instance is already created.
-        if (is_null(self::$smartyInstance)) {
-            //Create a new Smarty instance if is_null is true.
+        if (self::$smartyInstance === null) {
+            //Create a new Smarty instance.
             self::$smartyInstance = new Smarty();
 
-            //Set Smarty configuration using initialized read-only properties from the constructor.
-            self::$smartyInstance->setTemplateDir(self::$this->smartyTemplateDir);
-//            self::$smartyInstance->setCompileDir(self::$smartyCompileDir);
-//            self::$smartyInstance->setConfigDir(self::$smartyConfigDir);
-//            self::$smartyInstance->setCacheDir(self::$smartyCacheDir);
-//            self::$smartyInstance->setCaching(self::$smartySetCache);
-//            self::$smartyInstance->setCacheLifetime(self::$smartyCacheLifetime);
-//            self::$smartyInstance->setCompileCheck(self::$smartyCompileCheck);
-//            self::$smartyInstance->setDebugging(self::$smartyDebugging);
+            //Set Smarty configuration using properties from the constructor.
+            self::$smartyInstance->setTemplateDir($this->smartyTemplateDir);
+            self::$smartyInstance->setCompileDir($this->smartyCompileDir);
+            self::$smartyInstance->setConfigDir($this->smartyConfigDir);
+            self::$smartyInstance->setCacheDir($this->smartyCacheDir);
+            self::$smartyInstance->setCaching($this->smartySetCache);
+            self::$smartyInstance->setCacheLifetime($this->smartyCacheLifetime);
+            self::$smartyInstance->setCompileCheck($this->smartyCompileCheck);
+            self::$smartyInstance->setDebugging($this->smartyDebugging);
         }
 
         //Return the instance.

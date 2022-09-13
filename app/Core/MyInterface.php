@@ -23,7 +23,8 @@ namespace App\Core;
  * Use (Import) Statement(s) Definition
  * ----------------------------------------------------------------
  */
-//Use/import statements are not required for an interface.
+
+use Smarty as Smarty;
 
 /**
  * MyInterface
@@ -40,7 +41,7 @@ interface MyInterface
      * SmartyInstance provides an interface to implement Smarty
      * templat engine.
      *
-     * @return SmartyInstance SmartyInstance
+     * @return Smarty Smarty
      */
-    public static function SmartyInstance(): SmartyInstance;
+    public function SmartyInstance(): Smarty;
 }

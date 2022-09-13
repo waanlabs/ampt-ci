@@ -1,16 +1,50 @@
 {
-  "name": "codeigniter4/codeigniter4",
+  "name": "waansolutions/AMPT-CI",
+  "description": "Alapine, Tailwind and Smarty base CodeIgniter4 template.",
+  "version": "1.0.0",
   "type": "project",
-  "description": "The CodeIgniter framework v4",
-  "homepage": "https://codeigniter.com",
-  "license": "MIT",
+  "keywords": [
+    "Alpine",
+    "CodeIgniter",
+    "MySql",
+    "PHP",
+    "Smarty",
+    "Tailwind"
+  ],
+  "homepage": "",
+  //Add github project url here.
+  "readme": "",
+  //Add relative path of the readme file.
+  "time": "",
+  //Add the date [YYYY-MM-DD] of the last version update.
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Anupa P.",
+      "email": "anupa@waan.email"
+    },
+    {
+      "name": "Deg P.",
+      "email": "deg@waan.email"
+    },
+    {
+      "name": "Wathsala T.",
+      "email": "wathsala@waan.email"
+    }
+  ],
+  "support": {
+    "email": "http://forum.codeigniter.com/",
+    "source": "https://github.com/waansolutions/AMPT-CI"
+  },
+  "funding": [],
   "require": {
-    "php": "^7.4 || ^8.0",
+    "php": "^8.1",
     "ext-curl": "*",
     "ext-intl": "*",
     "ext-json": "*",
     "ext-mbstring": "*",
-    "kint-php/kint": "^4.2",
     "laminas/laminas-escaper": "^2.9",
     "psr/log": "^1.1",
     "smarty/smarty": "^4.1"
@@ -18,38 +52,18 @@
   "require-dev": {
     "codeigniter/coding-standard": "^1.1",
     "fakerphp/faker": "^1.9",
-    "friendsofphp/php-cs-fixer": "~3.11.0",
+    "friendsofphp/php-cs-fixer": "3.6.*",
+    "kint-php/kint": "^4.1.1",
     "mikey179/vfsstream": "^1.6",
     "nexusphp/cs-config": "^3.3",
     "nexusphp/tachycardia": "^1.0",
     "phpstan/phpstan": "^1.7.1",
     "phpunit/phpunit": "^9.1",
     "predis/predis": "^1.1 || ^2.0",
-    "rector/rector": "0.14.2"
+    "rector/rector": "0.13.5"
   },
   "suggest": {
-    "ext-imagick": "If you use Image class ImageMagickHandler",
-    "ext-simplexml": "If you format XML",
-    "ext-mysqli": "If you use MySQL",
-    "ext-oci8": "If you use Oracle Database",
-    "ext-pgsql": "If you use PostgreSQL",
-    "ext-sqlsrv": "If you use SQL Server",
-    "ext-sqlite3": "If you use SQLite3",
-    "ext-memcache": "If you use Cache class MemcachedHandler with Memcache",
-    "ext-memcached": "If you use Cache class MemcachedHandler with Memcached",
-    "ext-redis": "If you use Cache class RedisHandler",
-    "ext-fileinfo": "Improves mime type detection for files",
-    "ext-readline": "Improves CLI::input() usability"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-develop": "4.x-dev"
-    }
+    "ext-fileinfo": "Improves mime type detection for files"
   },
   "autoload": {
     "psr-4": {
@@ -66,16 +80,22 @@
       "Utils\\": "utils/"
     }
   },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-develop": "4.x-dev"
+    }
+  },
   "scripts": {
     "post-update-cmd": [
       "CodeIgniter\\ComposerScripts::postUpdate",
       "bash -c \"if [ -f admin/setup.sh ]; then bash admin/setup.sh; fi\""
     ],
-    "analyze": [
-      "phpstan analyze",
-      "rector process --dry-run"
-    ],
-    "sa": "@analyze",
+    "analyze": "phpstan analyse",
     "test": "phpunit",
     "cs": [
       "php-cs-fixer fix --ansi --verbose --dry-run --diff --config=.php-cs-fixer.user-guide.php",
@@ -86,18 +106,12 @@
       "php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.user-guide.php",
       "php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.no-header.php",
       "php-cs-fixer fix --ansi --verbose --diff"
-    ],
-    "style": "@cs-fix"
+    ]
   },
   "scripts-descriptions": {
     "analyze": "Run static analysis",
     "test": "Run unit tests",
     "cs": "Check the coding style",
     "cs-fix": "Fix the coding style"
-  },
-  "support": {
-    "forum": "http://forum.codeigniter.com/",
-    "source": "https://github.com/codeigniter4/CodeIgniter4",
-    "slack": "https://codeigniterchat.slack.com"
   }
 }
