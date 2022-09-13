@@ -34,7 +34,6 @@ use Smarty as Smarty;
 class MyController extends BaseController implements MyInterface
 {
     private static $smartyInstance = null;
-    private static $myControllerInstance = null;
 
     /**
      * Constructor
@@ -54,19 +53,19 @@ class MyController extends BaseController implements MyInterface
      */
     public function __construct(
 
-        private readonly string $smartyTemplateDir = APPPATH . 'Views',
-        private readonly string $smartyCompileDir = WRITEPATH . 'smarty/template_c/',
-        private readonly string $smartyConfigDir = WRITEPATH . 'smarty/config',
-        private readonly string $smartyCacheDir = WRITEPATH . 'Smarty/Cache',
-        private readonly object $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
-        private readonly int $smartyCacheLifetime = 60 * 60 * 24,
+        public readonly string $smartyTemplateDir = APPPATH . 'Views',
+        public readonly string $smartyCompileDir = WRITEPATH . 'smarty/template_c/',
+        public readonly string $smartyConfigDir = WRITEPATH . 'smarty/config',
+        public readonly string $smartyCacheDir = WRITEPATH . 'Smarty/Cache',
+        public readonly object $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
+        public readonly int $smartyCacheLifetime = 60 * 60 * 24,
         /* ---------------------------------------------------
          * $smarty->setCompileCheck(true);
          * Check for file changes and recompile cache.
          * Set false for production to reduce overhead.
          * --------------------------------------------------- */
-        private readonly bool $smartyCompileCheck = false,
-        private readonly bool $smartyDebugging = false,
+        public readonly bool $smartyCompileCheck = false,
+        public readonly bool $smartyDebugging = false,
     ) {}
 
     /**
@@ -83,18 +82,16 @@ class MyController extends BaseController implements MyInterface
         if (is_null(self::$smartyInstance)) {
             //Create a new Smarty instance if is_null is true.
             self::$smartyInstance = new Smarty();
-            //Create a new instance of MyController and assign it to $myControllerInstance.
-            self::$myControllerInstance = new MyController();
 
             //Set Smarty configuration using initialized read-only properties from the constructor.
-            self::$smartyInstance->setTemplateDir(self::$myControllerInstance->smartyTemplateDir);
-            self::$smartyInstance->setCompileDir(self::$myControllerInstance->smartyCompileDir);
-            self::$smartyInstance->setConfigDir(self::$myControllerInstance->smartyConfigDir);
-            self::$smartyInstance->setCacheDir(self::$myControllerInstance->smartyCacheDir);
-            self::$smartyInstance->setCaching(self::$myControllerInstance->smartySetCache);
-            self::$smartyInstance->setCacheLifetime(self::$myControllerInstance->smartyCacheLifetime);
-            self::$smartyInstance->setCompileCheck(self::$myControllerInstance->smartyCompileCheck);
-            self::$smartyInstance->setDebugging(self::$myControllerInstance->smartyDebugging);
+            self::$smartyInstance->setTemplateDir(self::$this->smartyTemplateDir);
+//            self::$smartyInstance->setCompileDir(self::$smartyCompileDir);
+//            self::$smartyInstance->setConfigDir(self::$smartyConfigDir);
+//            self::$smartyInstance->setCacheDir(self::$smartyCacheDir);
+//            self::$smartyInstance->setCaching(self::$smartySetCache);
+//            self::$smartyInstance->setCacheLifetime(self::$smartyCacheLifetime);
+//            self::$smartyInstance->setCompileCheck(self::$smartyCompileCheck);
+//            self::$smartyInstance->setDebugging(self::$smartyDebugging);
         }
 
         //Return the instance.
