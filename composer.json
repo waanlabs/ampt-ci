@@ -1,11 +1,11 @@
 {
-  "name": "codeigniter4/codeigniter4",
+  "name": "waansolutions/apmt-ci",
   "type": "project",
   "description": "The CodeIgniter framework v4",
   "homepage": "https://codeigniter.com",
   "license": "MIT",
   "require": {
-    "php": "^7.4 || ^8.0",
+    "php": "^8.1",
     "ext-curl": "*",
     "ext-intl": "*",
     "ext-json": "*",

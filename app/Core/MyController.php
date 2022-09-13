@@ -1,28 +1,26 @@
 <?php
 /**
  * MyController
- * ------------------------------------------------------------
- * @package    ampt-ci.service.app
- * @subpackage Core
+ * ----------------------------------------------------------------------------
+ * @package    \App\Core\MyController
  * @author     Waan <admin@waan.email>
- * @copyright  Copyright (c) 2021, www.waan.io
- * @license    www.waan.io (Waan LLC)
+ * @copyright  Copyright (c) 2022, www.waan.io
+ * @license    MIT License (http://www.opensource.org/licenses/mit)
  * @link       https://www.waan.io
  * @version    Version 1.0.0
  * @source     MyController.php
- * ------------------------------------------------------------
  */
 
 /**
  * Namespace (Package) Definition
- * ------------------------------------------------------------
+ * ----------------------------------------------------------------------------
  */
 
 namespace App\Core;
 
 /**
  * Use (Import) Statement(s) Definition
- * ------------------------------------------------------------
+ * ----------------------------------------------------------------------------
  */
 
 use App\Controllers\BaseController as BaseController;
@@ -31,9 +29,19 @@ use CodeIgniter\HTTP\ResponseInterface as ResponseInterface;
 use Psr\Log\LoggerInterface as LoggerInterface;
 use Smarty as Smarty;
 
+/**
+ * MyController
+ * ----------------------------------------------------------------------------
+ * MyController provides a set of functions for user to implement and use.
+ */
 class MyController extends BaseController implements MyInterface
 {
-    private static Smarty|null $smartyInstance = null;
+    /**
+     * SmartyInstance
+     * ------------------------------------------------------------------------
+     * SmartyInstance provides an interface to implement Smarty template engine
+     */
+    private static null|Smarty $smartyInstance = null;
 
     /**
      * Constructor
