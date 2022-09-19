@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Home Controller
  * ----------------------------------------------------------------
@@ -27,11 +28,10 @@ namespace App\Controllers;
 use App\Core\MyController;
 
 /**
- * Class Home extends MyController
+ * Class Home
  * ----------------------------------------------------------------
  * Home controller is the initialization point of the application.
  * Providing a loader for index page.
- * ----------------------------------------------------------------
  */
 class Home extends MyController
 {

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MyController
  * ----------------------------------------------------------------------------
@@ -107,7 +108,8 @@ class MyController extends BaseController implements MyInterface
            -------------------------------------------------------------------- */
         public readonly bool $smartyCompileCheck = false,
         public readonly bool $smartyDebugging = false,
-    ) {}
+    ) {
+    }
 
     /**
      * SmartyInstance function
