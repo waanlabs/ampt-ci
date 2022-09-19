@@ -139,7 +139,7 @@ class MyController extends BaseController implements MyInterface
     /**
      * initController function
      * ------------------------------------------------------------------------
-     * Calls parent user defined constructor in baseController.
+     * Calls parent constructor (initController) in baseController.
      *
      * ?Note: BaseController::initController() or parent::__construct().
      *
