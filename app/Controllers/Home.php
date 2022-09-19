@@ -2,8 +2,7 @@
 /**
  * Home Controller
  * ----------------------------------------------------------------
- * @package    ampt-ci.app.controllers
- * @subpackage Controller
+ * @package    \App\Controllers\Home
  * @author     Waan <admin@waan.email>
  * @copyright  Copyright (c) 2022, www.waan.io
  * @license    MIT License

@@ -32,23 +32,53 @@ use Smarty as Smarty;
 /**
  * MyController
  * ----------------------------------------------------------------------------
- * MyController provides a set of functions for user to implement and use.
+ * MyController is a user defined base controller which provides a set of
+ * custom functions.
+ *
+ * Ex - template engine, session, database, etc.
+ *
+ * *Important: Make sure to extend MyController instead of BaseController and
+ *  add any custom function here.
+ *
+ * ?Note: The idea of the MyInterface is to provide a standard for user
+ *  functions.
  */
 class MyController extends BaseController implements MyInterface
 {
     /**
      * SmartyInstance
      * ------------------------------------------------------------------------
-     * SmartyInstance provides an interface to implement Smarty template engine
+     * SmartyInstance to hold Smarty instance.
+     *
+     * @access private
+     * @access static
+     * @param null|Smarty $smartyInstance
      */
     private static null|Smarty $smartyInstance = null;
 
     /**
      * Constructor
-     * ------------------------------------------------------------
-     * Constructor for MyController; __get() and __set() methods
-     * are defined at runtime using read-only properties.
+     * ------------------------------------------------------------------------
+     * Constructor for MyController;__set() methods are defined at runtime
+     * using read-only properties.
      *
+     * *Important: Declaration below is similar to at runtime.
+     *  class Sample {
+     *
+     *      public readonly string $sample;
+     *
+     *      public function __construct(string $sample) {
+     *
+     *          $this->sample = $sample;
+     *      }
+     *  }
+     *
+     * ?Note: Constructor.
+     * @access public
+     *
+     * ?Note: Variables
+     * @access public
+     * @access readonly
      * @param string $smartyTemplateDir
      * @param string $smartyCompileDir
      * @param string $smartyConfigDir
@@ -59,28 +89,27 @@ class MyController extends BaseController implements MyInterface
      * @param bool $smartyDebugging
      */
     public function __construct(
-
         public readonly string $smartyTemplateDir = APPPATH . 'Views',
         public readonly string $smartyCompileDir = WRITEPATH . 'smarty/template_c/',
         public readonly string $smartyConfigDir = WRITEPATH . 'smarty/config',
         public readonly string $smartyCacheDir = WRITEPATH . 'Smarty/Cache',
         public readonly int $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
         public readonly int $smartyCacheLifetime = 60 * 60 * 24,
-        /* ------------------------------------------------------------
+        /* --------------------------------------------------------------------
          * $smarty->setCompileCheck(true);
          * Check for file changes and recompile cache.
          * Set false for production to reduce overhead.
-         * ------------------------------------------------------------ */
+         * -------------------------------------------------------------------- */
         public readonly bool $smartyCompileCheck = false,
         public readonly bool $smartyDebugging = false,
     ) {}
 
     /**
      * SmartyInstance function
-     * ------------------------------------------------------------
-     * SmartyInstance is a class to implement Smarty
-     * template engine via MyInterface.
+     * ------------------------------------------------------------------------
+     * SmartyInstance initialize Smarty template engine via MyInterface.
      *
+     * @access public
      * @return Smarty Smarty
      */
     public function SmartyInstance(): Smarty
@@ -105,8 +134,23 @@ class MyController extends BaseController implements MyInterface
         return self::$smartyInstance;
     }
 
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-    {
+    /**
+     * initController function
+     * ------------------------------------------------------------------------
+     * Calls parent user defined constructor in baseController.
+     *
+     * ?Note: BaseController::initController() or parent::__construct().
+     *
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface $logger
+     * @return void
+     */
+    public function initController(
+        RequestInterface $request,
+        ResponseInterface $response,
+        LoggerInterface $logger
+    ): void {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
