@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MyInterface
  * ----------------------------------------------------------------------------
@@ -32,7 +33,8 @@ use Smarty as Smarty;
  *
  * Ex - template engine, database, etc.
  *
- * view /APP/Controller/MyController.php for custom Smarty implementation.
+ * *Important:
+ * *view /APP/Controller/MyController.php for custom Smarty implementation.
  */
 interface MyInterface
 {

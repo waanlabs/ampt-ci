@@ -37,11 +37,12 @@ use Smarty as Smarty;
  *
  * Ex - template engine, session, database, etc.
  *
- * *Important: Make sure to extend MyController instead of BaseController and
- * *add any custom function here.
+ * *Important:
+ * *Make sure to extend MyController instead of BaseController and add any
+ * *custom function here.
  *
- * ?Note: The idea of the MyInterface is to provide a standard for user
- * ?functions.
+ * ?Note:
+ * ?The idea of the MyInterface is to provide a standard for user functions.
  */
 class MyController extends BaseController implements MyInterface
 {
@@ -49,8 +50,9 @@ class MyController extends BaseController implements MyInterface
      * SmartyInstance
      * ------------------------------------------------------------------------
      * SmartyInstance to hold instance of a Smarty object.
-     * !Critical: Type Smarty is not defined since the Smarty class is added
-     * !through composer
+     * !Critical:
+     * !Type Smarty is not defined since the Smarty class is added through
+     * !composer
      *
      * @access private
      * @access static
@@ -64,7 +66,8 @@ class MyController extends BaseController implements MyInterface
      * Constructor for MyController;__set() methods are defined at runtime
      * using read-only properties.
      *
-     * *Important: Declaration below is similar to at runtime.
+     * *Important:
+     * *Declaration below is similar to at runtime.
      * *class Sample {
      *
      * *    public readonly string $sample;
@@ -98,10 +101,10 @@ class MyController extends BaseController implements MyInterface
         public readonly int $smartySetCache = Smarty::CACHING_LIFETIME_CURRENT,
         public readonly int $smartyCacheLifetime = 60 * 60 * 24,
         /* --------------------------------------------------------------------
-         * $smarty->setCompileCheck(true);
-         * Check for file changes and recompile cache.
-         * Set false for production to reduce overhead.
-         * -------------------------------------------------------------------- */
+           $smarty->setCompileCheck(true);
+           Check for file changes and recompile cache.
+           Set false for production to reduce overhead.
+           -------------------------------------------------------------------- */
         public readonly bool $smartyCompileCheck = false,
         public readonly bool $smartyDebugging = false,
     ) {}
@@ -141,7 +144,8 @@ class MyController extends BaseController implements MyInterface
      * ------------------------------------------------------------------------
      * Calls parent constructor (initController) in baseController.
      *
-     * ?Note: BaseController::initController() or parent::__construct().
+     * ?Note:
+     * ?BaseController::initController() or parent::__construct().
      *
      * @param RequestInterface $request
      * @param ResponseInterface $response
