@@ -38,23 +38,25 @@ use Smarty as Smarty;
  * Ex - template engine, session, database, etc.
  *
  * *Important: Make sure to extend MyController instead of BaseController and
- *  add any custom function here.
+ * *add any custom function here.
  *
  * ?Note: The idea of the MyInterface is to provide a standard for user
- *  functions.
+ * ?functions.
  */
 class MyController extends BaseController implements MyInterface
 {
     /**
      * SmartyInstance
      * ------------------------------------------------------------------------
-     * SmartyInstance to hold Smarty instance.
+     * SmartyInstance to hold instance of a Smarty object.
+     * !Critical: Type Smarty is not defined since the Smarty class is added
+     * !through composer
      *
      * @access private
      * @access static
-     * @param null|Smarty $smartyInstance
+     * @var null|Smarty $smartyInstance
      */
-    private static null|Smarty $smartyInstance = null;
+    private static ?Smarty $smartyInstance = null;
 
     /**
      * Constructor
@@ -63,15 +65,15 @@ class MyController extends BaseController implements MyInterface
      * using read-only properties.
      *
      * *Important: Declaration below is similar to at runtime.
-     *  class Sample {
+     * *class Sample {
      *
-     *      public readonly string $sample;
+     * *    public readonly string $sample;
      *
-     *      public function __construct(string $sample) {
+     * *    public function __construct(string $sample) {
      *
-     *          $this->sample = $sample;
-     *      }
-     *  }
+     * *        $this->sample = $sample;
+     * *    }
+     * *}
      *
      * ?Note: Constructor.
      * @access public
