@@ -27,7 +27,7 @@ namespace App\Core;
 use Smarty as Smarty;
 
 /**
- * MyInterface
+ * MyInterface Abstract Class
  * ----------------------------------------------------------------------------
  * MyInterface provides a set of functions for user to implement.
  *
@@ -39,12 +39,12 @@ use Smarty as Smarty;
 interface MyInterface
 {
     /**
-     * SmartyInstance
+     * SmartyInstance Method (Function)
      * ------------------------------------------------------------------------
      * SmartyInstance provides an interface to implement Smarty template engine.
      *
      * @access public
-     * @param void absent
+     * @param void null
      * @return Smarty Smarty
      * @see /APP/Controller/MyController.php for implementation
      */

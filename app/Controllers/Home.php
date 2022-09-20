@@ -31,10 +31,22 @@ use App\Core\MyController;
  * Class Home
  * ----------------------------------------------------------------
  * Home controller is the initialization point of the application.
- * Providing a loader for index page.
+ *
+ * @access public
+ * @param void null
+ * @return void null
  */
 class Home extends MyController
 {
+    /**
+     * Index function
+     * ----------------------------------------------------------------
+     * This method is the default method of the controller.
+     *
+     * @access public
+     * @param void null
+     * @return void null
+     */
     public function index(): void
     {
         $content = array(

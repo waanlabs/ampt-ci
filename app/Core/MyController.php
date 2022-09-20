@@ -31,7 +31,7 @@ use Psr\Log\LoggerInterface as LoggerInterface;
 use Smarty as Smarty;
 
 /**
- * MyController
+ * MyController Class
  * ----------------------------------------------------------------------------
  * MyController is a user defined base controller which provides a set of
  * custom functions.
@@ -64,7 +64,7 @@ class MyController extends BaseController implements MyInterface
     private static ?Smarty $smartyInstance = null;
 
     /**
-     * Constructor
+     * Constructor Method (Function)
      * ------------------------------------------------------------------------
      * Constructor for MyController;__set() methods are defined at runtime
      * using read-only properties.
@@ -95,7 +95,7 @@ class MyController extends BaseController implements MyInterface
      * @param int $smartyCacheLifetime
      * @param bool $smartyCompileCheck
      * @param bool $smartyDebugging
-     * @return void
+     * @return void null
      */
     public function __construct(
         public readonly string $smartyTemplateDir = APPPATH . 'Views',
@@ -114,12 +114,12 @@ class MyController extends BaseController implements MyInterface
     ) {}
 
     /**
-     * SmartyInstance function
+     * SmartyInstance Method (Function)
      * ------------------------------------------------------------------------
      * SmartyInstance initialize Smarty template engine via MyInterface.
      *
      * @access public
-     * @param void absent
+     * @param void null
      * @return Smarty Smarty
      * @see /APP/Controller/MyInterface.php for more information.
      */
@@ -146,7 +146,7 @@ class MyController extends BaseController implements MyInterface
     }
 
     /**
-     * initController function
+     * initController Method (Function)
      * ------------------------------------------------------------------------
      * Calls parent constructor (initController) in baseController.
      *
@@ -157,7 +157,7 @@ class MyController extends BaseController implements MyInterface
      * @param RequestInterface $request
      * @param ResponseInterface $response
      * @param LoggerInterface $logger
-     * @return void
+     * @return void null
      */
     public function initController(
         RequestInterface $request,
