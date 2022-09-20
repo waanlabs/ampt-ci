@@ -40,10 +40,12 @@ use Smarty as Smarty;
  *
  * *Important:
  * *Make sure to extend MyController instead of BaseController and add any
- * *custom function here.
+ * *custom function required.
  *
  * ?Note:
- * ?The idea of the MyInterface is to provide a standard for user functions.
+ * ?The idea of the MyInterface is to specify the behavior of a class by
+ * ?providing an abstract type. This is a best practice to approach for coding.
+ * ?user can disregard this interface if not required.
  */
 class MyController extends BaseController implements MyInterface
 {
@@ -53,7 +55,7 @@ class MyController extends BaseController implements MyInterface
      * SmartyInstance to hold instance of a Smarty object.
      * !Critical:
      * !Type Smarty is not defined since the Smarty class is added through
-     * !composer
+     * !composer at the build.
      *
      * @access private
      * @access static
@@ -93,6 +95,7 @@ class MyController extends BaseController implements MyInterface
      * @param int $smartyCacheLifetime
      * @param bool $smartyCompileCheck
      * @param bool $smartyDebugging
+     * @return void
      */
     public function __construct(
         public readonly string $smartyTemplateDir = APPPATH . 'Views',
@@ -108,8 +111,7 @@ class MyController extends BaseController implements MyInterface
            -------------------------------------------------------------------- */
         public readonly bool $smartyCompileCheck = false,
         public readonly bool $smartyDebugging = false,
-    ) {
-    }
+    ) {}
 
     /**
      * SmartyInstance function
@@ -117,7 +119,9 @@ class MyController extends BaseController implements MyInterface
      * SmartyInstance initialize Smarty template engine via MyInterface.
      *
      * @access public
+     * @param void absent
      * @return Smarty Smarty
+     * @see /APP/Controller/MyInterface.php for more information.
      */
     public function SmartyInstance(): Smarty
     {
@@ -149,6 +153,7 @@ class MyController extends BaseController implements MyInterface
      * ?Note:
      * ?BaseController::initController() or parent::__construct().
      *
+     * @access public
      * @param RequestInterface $request
      * @param ResponseInterface $response
      * @param LoggerInterface $logger
