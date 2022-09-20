@@ -29,7 +29,7 @@ use Smarty as Smarty;
 /**
  * MyInterface
  * ----------------------------------------------------------------------------
- * MyInterface provides a set of functions for user to implement and use.
+ * MyInterface provides a set of functions for user to implement.
  *
  * Ex - template engine, database, etc.
  *
@@ -43,7 +43,10 @@ interface MyInterface
      * ------------------------------------------------------------------------
      * SmartyInstance provides an interface to implement Smarty template engine.
      *
+     * @access public
+     * @param void absent
      * @return Smarty Smarty
+     * @see /APP/Controller/MyController.php for implementation
      */
     public function SmartyInstance(): Smarty;
 }
