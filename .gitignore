@@ -44,3 +44,5 @@ application/logs/*
 writable/smarty/cache/*
 writable/smarty/configs/*
 writable/smarty/template_c/*
+
+templates
