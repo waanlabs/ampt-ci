@@ -14,11 +14,16 @@ logs/*
 .vscode/
 .run
 
-# Vendor files & folders
+# Composer files & folders
 vendor/
 composer.lock
 
-# Codeigniter files & folders
+# NPM files & folders
+templates/node_modules/
+templates/html5-boilerplate_v8.0.0/
+templates/package-lock.json
+
+# Codeigniter 4 files & folders
 */config/development
 */logs/log-*.php
 !*/logs/index.html
@@ -34,13 +39,14 @@ user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
-# Codeigniter 3
+# Codeigniter 3 file & folders
+/vendor/
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
 
-# User files & folders
+# Smarty files & folders
 writable/smarty/cache/*
 writable/smarty/configs/*
 writable/smarty/template_c/*
+
