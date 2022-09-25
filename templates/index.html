@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <meta content="" name="description"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+    <meta content="" property="og:title"/>
+    <meta content="" property="og:type"/>
+    <meta content="" property="og:url"/>
+    <meta content="" property="og:image"/>
+
+    <link href="site.webmanifest" rel="manifest"/>
+    <link href="icon.png" rel="apple-touch-icon"/>
+    <!-- Place favicon.ico in the root directory -->
+
+    <meta content="#fffff" name="theme-color"/>
+</head>
+
+<body>
+<div id="app"></div>
+
+<!-- Add your site or application content here -->
+<h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+<p class="text-3xl font-bold underline">Hello world! This is HTML5 Boilerplate.</p>
+<script async src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script defer src="/src/main.ts" type="module"></script>
+
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+    window.ga = function () {
+        ga.q.push(arguments);
+    };
+    ga.q = [];
+    ga.l = +new Date();
+    ga("create", "UA-XXXXX-Y", "auto");
+    ga("set", "anonymizeIp", true);
+    ga("set", "transport", "beacon");
+    ga("send", "pageview");
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+</body>
+</html>
